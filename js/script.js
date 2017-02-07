@@ -1,6 +1,7 @@
 var register = document.getElementById('register');
-var num1 = document.getElementById('num1');
-var num2 = document.getElementById('num2');
+var num1 = 0;
+var operator ='';
+
 //Function leegmaken register
 function cls (){
 	register.innerHTML = "";
@@ -10,13 +11,43 @@ function cls (){
 function click (parms){
     register.innerHTML += parms.target.innerHTML;
 }
-
-//Operator function
-function calculate(){
-	var num1 = 5;
-	var num2 = 5;
-	var calc = num1 + num2;
-	document.getElementById('register').innerHTML = calc;
+//Function Bereken nummers
+function plus(){
+	num1 = parseInt(document.getElementById('register').innerHTML);
+	operator = '+';
+	register.innerHTML = "";
+}
+function min(){
+	num1 = parseInt(document.getElementById('register').innerHTML);
+	operator = '-';
+	register.innerHTML = "";
+}
+function keer(){
+	num1 = parseInt(document.getElementById('register').innerHTML);
+	operator = '*';
+	register.innerHTML = "";
+}
+function deel(){
+	num1 = parseInt(document.getElementById('register').innerHTML);
+	operator = '/';
+	register.innerHTML = "";
+}
+//Function to calculate
+function calculate() {
+	var getalInDisplay = parseInt(document.getElementById('register').innerHTML);
+	if (operator == '+'){
+		var uitkomst = num1 + getalInDisplay
+	}
+	if (operator == '-'){
+		var uitkomst = num1 - getalInDisplay
+	}
+	if (operator == '/'){
+		var uitkomst = num1 / getalInDisplay
+	}
+	if (operator == '*'){
+		var uitkomst = num1 * getalInDisplay
+	}
+	document.getElementById('register').innerHTML = uitkomst;
 }
 
 
@@ -32,4 +63,8 @@ document.getElementById("btn9").addEventListener("click", click);
 document.getElementById("btn0").addEventListener("click", click);
 document.getElementById("btnd").addEventListener("click", click);
 document.getElementById("btnc").addEventListener("click", cls);
-document.getElementById("opr1").addEventListener("click", calculate);
+document.getElementById("plus").addEventListener("click", plus);
+document.getElementById("min").addEventListener("click", min);
+document.getElementById("keer").addEventListener("click", keer);
+document.getElementById("deel").addEventListener("click", deel);
+document.getElementById("calculate").addEventListener("click", calculate);
