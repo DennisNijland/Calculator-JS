@@ -11,30 +11,30 @@ function cls (){
 function click (parms){
     register.innerHTML += parms.target.innerHTML;
 }
-//Function Bereken nummers
+//Function Som uitrekenen
 function plus(){
-	num1 = parseInt(document.getElementById('register').innerHTML);
+	num1 = parseFloat(document.getElementById('register').innerHTML);
 	operator = '+';
 	register.innerHTML = "";
 }
 function min(){
-	num1 = parseInt(document.getElementById('register').innerHTML);
+	num1 = parseFloat(document.getElementById('register').innerHTML);
 	operator = '-';
 	register.innerHTML = "";
 }
 function keer(){
-	num1 = parseInt(document.getElementById('register').innerHTML);
+	num1 = parseFloat(document.getElementById('register').innerHTML);
 	operator = '*';
 	register.innerHTML = "";
 }
 function deel(){
-	num1 = parseInt(document.getElementById('register').innerHTML);
+	num1 = parseFloat(document.getElementById('register').innerHTML);
 	operator = '/';
 	register.innerHTML = "";
 }
 //Function to calculate
 function calculate() {
-	var getalInDisplay = parseInt(document.getElementById('register').innerHTML);
+	var getalInDisplay = parseFloat(document.getElementById('register').innerHTML);
 	if (operator == '+'){
 		var uitkomst = num1 + getalInDisplay
 	}
@@ -50,7 +50,7 @@ function calculate() {
 	document.getElementById('register').innerHTML = uitkomst;
 }
 
-
+//Nummers toevoegen aan Register
 document.getElementById("btn1").addEventListener("click", click);
 document.getElementById("btn2").addEventListener("click", click);
 document.getElementById("btn3").addEventListener("click", click);
@@ -62,7 +62,11 @@ document.getElementById("btn8").addEventListener("click", click);
 document.getElementById("btn9").addEventListener("click", click);
 document.getElementById("btn0").addEventListener("click", click);
 document.getElementById("btnd").addEventListener("click", click);
+
+//Register leegmaken
 document.getElementById("btnc").addEventListener("click", cls);
+
+//Som uitrekenen
 document.getElementById("plus").addEventListener("click", plus);
 document.getElementById("min").addEventListener("click", min);
 document.getElementById("keer").addEventListener("click", keer);
