@@ -37,15 +37,19 @@ function calculate() {
 	var getalInDisplay = parseFloat(document.getElementById('register').innerHTML);
 	if (operator == '+'){
 		var uitkomst = num1 + getalInDisplay
+		uitkomst=uitkomst.toFixed(1);
 	}
 	if (operator == '-'){
 		var uitkomst = num1 - getalInDisplay
+		uitkomst=uitkomst.toFixed(1);
 	}
 	if (operator == '/'){
 		var uitkomst = num1 / getalInDisplay
+		uitkomst=uitkomst.toFixed(1);
 	}
 	if (operator == '*'){
 		var uitkomst = num1 * getalInDisplay
+		uitkomst=uitkomst.toFixed(1);
 	}
 	document.getElementById('register').innerHTML = uitkomst;
 }
